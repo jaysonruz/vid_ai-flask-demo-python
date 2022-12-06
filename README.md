@@ -1,10 +1,15 @@
-# Shotstack Pexels Demo
+# vid_ai flask Demo
 
 This project demonstrates how to use the Shotstack cloud video editing API to create 
-a video using an HTML form and video sourced from the Pexels video library.
+a video using an HTML form and video sourced from the **Pexels video library** and audio from **Amazon Polly**
+and a bit of *NLP* to fetch keywords
 
 An HTML web form allows the user to search the Pexels library via the Pexels API, choose 
-a soundtrack and add a title. A video is the created by the Shotstack API using the video
+a soundtrack and add a title.
+the App then breaks the texts into sentences to fetch the audio from *AMAZON POLLY*
+while uses *NLP* to get keywords that can be used to fetch relevant assets.
+
+A video is the created by the Shotstack API using the video
 clips returned by the Pexels search and the track and title entered by the user.
 The demo is built using Python and can be used with Flask Framework.
 
