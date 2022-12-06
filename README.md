@@ -6,9 +6,6 @@ a video using an HTML form and video sourced from the Pexels video library.
 An HTML web form allows the user to search the Pexels library via the Pexels API, choose 
 a soundtrack and add a title. A video is the created by the Shotstack API using the video
 clips returned by the Pexels search and the track and title entered by the user.
-
-View the live demo at: https://shotstack.io/demo/pexels/
-
 The demo is built using Python and can be used with Flask Framework.
 
 ### Requirements
