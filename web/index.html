@@ -22,8 +22,8 @@
             <div class="col-5">
                 <form class="jumbotron" method="post">
                     <div class="form-group" id="search-group">
-                        <label for="search" class="display-4">Make a video about</label>
-                        <input name="search" 
+                        <label for="search" class="display-4">Enter your story</label>
+                        <textarea  name="search" 
                                type="text"
                                pattern="[a-zA-Z0-9 ]+"
                                oninvalid="setCustomValidity('Only letters and numbers are allowed')"
@@ -31,9 +31,11 @@
                                class="form-control form-control-lg"
                                id="search"
                                placeholder="cats mountains people etc..."
-                               maxlength="30"
+                               maxlength="300"
+                               rows="10" cols="40"
                                required
-                        >
+                        >cats mountains people etc...
+                    </textarea>
                     </div>
                     <div class="form-group" id="title-group">
                         <label for="title">Add a Title</label>
