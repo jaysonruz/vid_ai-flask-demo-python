@@ -10,6 +10,12 @@ app = Flask(
 def index():
     return current_app.send_static_file('index.html')
 
+@app.route('/kwds', methods=['GET'])
+def helloworld():
+    if(request.method == 'GET'):
+        data = {"data": "list , of , keywords , will , be shown , here"}
+        return jsonify(data)
+
 @app.route('/demo/shotstack', methods = ['POST'])
 def post_render():
     data  = request.json

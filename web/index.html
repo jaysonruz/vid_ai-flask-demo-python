@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="https://shotstack.io/assets/css/main.css">
     <link rel="stylesheet" href="styles.css">
 
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script> 
+
     <title>Shotstack Pexels Video Maker Demo</title>
     <meta name="description" content="Search the Pexels stock footage video library and the Shotstack API will automatically compile an edit with music and a title."/>
 </head>
@@ -23,20 +26,45 @@
                 <form class="jumbotron" method="post">
                     <div class="form-group" id="search-group">
                         <label for="search" class="display-4">Enter your story</label>
-                        <textarea  name="search" 
-                               type="text"
+                        <textarea  name="search"
+                                placeholder="cats mountains people etc..."
+                                autofocus
                                pattern="[a-zA-Z0-9 ]+"
                                oninvalid="setCustomValidity('Only letters and numbers are allowed')"
                                oninput="setCustomValidity('')"
                                class="form-control form-control-lg"
                                id="search"
                                placeholder="cats mountains people etc..."
-                               maxlength="300"
+                               maxlength="500"
                                rows="10" cols="40"
                                required
-                        >cats mountains people etc...
+                        >
                     </textarea>
                     </div>
+
+                    <button type= "submit" btn btn-secondary" py-click="write_to_page()" id="manual">Fetch Keywords</button>
+                    <py-script>
+import json
+from js import XMLHttpRequest
+
+def write_to_page():
+    search_div = Element("pyscript-kwd-op")
+    
+    req = XMLHttpRequest.new()
+    req.open("GET", "http://127.0.0.1:5000/kwds", False)
+    req.send(None)
+    output = str(req.response)
+    result = json.loads(output)
+
+    search_div.element.innerText = result.get('data')
+                    </py-script>
+                    <br>
+                    <div id="pyscript-kwd-op">
+                        <p>
+                        
+                        </p>
+                    </div>
+                    <br>
                     <div class="form-group" id="title-group">
                         <label for="title">Add a Title</label>
                         <input name="title"

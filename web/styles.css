@@ -48,20 +48,20 @@ header {
 
 .btn-primary {
     font-weight: bold;
-    background-color: #25d3d0;
-    border-color: #25d3d0;
+    background-color: #253fd3;
+    border-color: #253fd3;
 }
 
 .btn-primary:hover, .btn-primary:active {
-    background-color: #25d3d0;
-    border-color: #25d3d0;
+    background-color: #253fd3;
+    border-color: #253fd3;
 }
 
 a {
-    color: #25d3d0;
+    color: #253fd3;
 }
 a:hover {
-    color: #25d3d0;
+    color: #253fd3;
 }
 
 .video-container .jumbotron {
