@@ -1,5 +1,11 @@
 from flask      import Flask, request, current_app, jsonify
-from .utilities import submit, status
+from .utilities import  status #,submit
+
+import sys
+sys.path.append(r'F:\21NProjects\vid_ai-flask-demo-python\api\vid_ai')
+
+from main import submit
+
 app = Flask(
     __name__,
     static_url_path= '', 
@@ -19,6 +25,7 @@ def helloworld():
 @app.route('/demo/shotstack', methods = ['POST'])
 def post_render():
     data  = request.json
+    print("DEBUG:",data)
     try:
         reply = submit(data)
 
@@ -57,3 +64,5 @@ def render(renderId):
             "message":  "Bad Request",
             "data":     e
         })
+if __name__ == "__main__":
+    app.run()
